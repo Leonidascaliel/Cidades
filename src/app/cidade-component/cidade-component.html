@@ -1,0 +1,42 @@
+<div class="container">
+    <br>
+    <div class="display-4 text-center">Cadastro de Cidades</div>
+    <form [formGroup]="formGroupProduct">
+        <div class="mb-3">
+            <label for="inputname" class="form-label">Nome da Cidade</label>
+            <input formControlName="name" type="text" class="form-control" id="inputname">
+        </div>
+        <div class="mb-3">
+            <label for="inputuf" class="form-label">Unidade Federativa (UF)</label>
+            <input formControlName="uf" type="text" class="form-control" id="inputuf">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputpais" class="form-label">País</label>
+            <input formControlName="pais" type="text" class="form-control" id="inputpais">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+    </form>
+
+    <br>Cidades Cadastradas: {{products.length}}<br><br>
+    <div class="card">
+  <div class="card-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">name</th>
+                <th scope="col">uf</th>
+                <th scope="col">pais</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.name}}</td>
+                <td>{{p.uf}}</td>
+                <td>{{p.pais}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>
