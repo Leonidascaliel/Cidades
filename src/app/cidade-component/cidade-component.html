@@ -15,28 +15,34 @@
             <label for="inputpais" class="form-label">País</label>
             <input formControlName="pais" type="text" class="form-control" id="inputpais">
         </div>
+
+        <div class="mb-3">
+            <label for="inputpais" class="form-label">Descrição</label>
+            <input formControlName="descricao" type="text" class="form-control" id="inputpais">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputpais" class="form-label">Pib</label>
+            <input formControlName="pib" type="text" class="form-control" id="inputpais">
+        </div>
+
         <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
     </form>
 
     <br>Cidades Cadastradas: {{products.length}}<br><br>
-    <div class="card">
-  <div class="card-body">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">name</th>
-                <th scope="col">uf</th>
-                <th scope="col">pais</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let p of products">
-                <td>{{p.name}}</td>
-                <td>{{p.uf}}</td>
-                <td>{{p.pais}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row g-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let p of products">
+            <div class="card h-100">
+                <div class="card-header">{{ p.name }}</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">UF: {{ p.uf }}</li>
+                    <li class="list-group-item">País: {{ p.pais }}</li>
+                    <li class="list-group-item">Descrição: {{ p.descricao }}</li>
+                    <li class="list-group-item">PIB: {{ p.pib }}</li>
+                </ul>
+            </div>
+        </div>
     </div>
-</div>
+    <br>
+    <br>
 </div>

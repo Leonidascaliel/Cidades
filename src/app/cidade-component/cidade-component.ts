@@ -18,6 +18,8 @@ export class CidadeComponent {
       name: [''],
       uf: [''],
       pais: [''],
+      descricao: [''],
+      pib:[''],
     })
   }
 
